@@ -28,7 +28,6 @@ class SteamAuthenticator < ::Auth::Authenticator
 
     result.username = data["nickname"]
     result.name = data["name"] # unless profile privacy set to private
-    result.steam_uid = data["steamid"]
     result.extra_data = { steam_uid: steam_uid }
 
     retrieve_avatar(result.user, data["image"])
