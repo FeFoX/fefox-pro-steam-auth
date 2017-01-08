@@ -28,6 +28,7 @@ class SteamAuthenticator < ::Auth::Authenticator
 
     result.username = data["nickname"]
     result.name = data["name"] # unless profile privacy set to private
+    result.steam_uid = data["steamid"]
     result.extra_data = { steam_uid: steam_uid }
 
     retrieve_avatar(result.user, data["image"])
@@ -54,7 +55,7 @@ class SteamAuthenticator < ::Auth::Authenticator
 
 end
 
-auth_provider title: 'with Steam',
+auth_provider title: 'Con  STEAM (Non siamo affiliati)',
     message: 'Sign in via Steam (Make sure pop up blockers are not enabled).',
     frame_width: 960,
     frame_height: 800,
